@@ -1,0 +1,30 @@
+<html>
+<title>Data Mahasiswa.html </title>
+<head>
+<script> function loadXMLDoc(){
+var xmlhttp;
+if(window.XMLHttpRequest) {
+
+		xmlhttp = new XMLHttpRequest();
+		}else{ 
+		xmlhttp = new ActiveXObject ( "Microsoft.XMLHTTP");
+		}
+		
+		   xmlhttp.onreadystatechange = function(){
+		   if(xmlhttp.readyState==4 && xmlhttp.status ==200){
+		   document.getElementById("nama","nim","kelas").innerHTML= xmlhttp.responseText;
+		   }
+		   }
+		   xmlhttp.open("GET","Mahasiswa1.xml",true);
+		   xmlhttp.send();
+		   }
+		   
+		   
+		   </script>
+		   </head>
+		   <body>
+		   <div id="nama","nim","kelas">
+		   <h2> Data Mahasiswa </h2></div>
+		   <button type="button" onclick="loadXMLDoc()">Tampilkan data Mahasiswa</button>
+		   </body>
+		   </html>
